@@ -5,7 +5,7 @@ const gallery=["2021/05/AZCPIimg-400x284.jpg","2021/05/AZCPIimg3-400x284.jpg","2
 export default function Home(){return <>
   <header className="siteHeader">
     <div className="contactBar"><span className="contactItem"><i>▯</i>(480) 808-1170</span><span className="contactItem"><i>✉</i>arizonacpi@gmail.com</span></div>
-    <div className="navBar"><a href="/" className="brand"><img src={A+"2021/05/ArizonaCommercialPropertyInspections-logo.png"} alt="Phoenix Arizona Commercial Building Inspections"/></a><nav><a className="active" href="/">HOME</a><a href="/about-us/">ABOUT</a><a href="/inspection-services/">SERVICES⌄</a><a href="#gallery">BLOG</a><a href="#contact">CONTACT</a></nav><a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <b>□</b></a><span className="menu">☰</span></div>
+    <div className="navBar"><a href="/" className="brand"><img src="/ArizonaCommercialPropertyInspections-logo.webp" alt="Phoenix Arizona Commercial Building Inspections"/></a><nav><a className="active" href="/">HOME</a><a href="/about-us/">ABOUT</a><a href="/inspection-services/">SERVICES⌄</a><a href="#gallery">BLOG</a><a href="#contact">CONTACT</a></nav><a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <b>□</b></a><span className="menu">☰</span></div>
   </header>
   <main>
     <section className="hero"><div className="heroCard"><h1>ARIZONA</h1><h2>COMMERCIAL PROPERTY INSPECTIONS</h2><p>ARIZONA’S #1 COMMERCIAL INSPECTION COMPANY</p></div><div className="heroButtons"><a href="tel:1-480-808-1170">(480) 808-1170</a><a href="/schedule-an-inspection/">Schedule Now!</a></div></section>
