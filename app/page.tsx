@@ -22,7 +22,7 @@ export default function Home(){
   </main>
   <footer id="contact"><div className="footerTop"><div><i>▯</i><h4>CALL US</h4><p>(480) 808-1170</p></div><div><i>✉</i><h4>EMAIL US</h4><p><a href="mailto:arizonacpi@gmail.com">Click Here to Email</a></p></div><div><i>□</i><h4>REQUEST INSPECTION</h4><p><a href="/schedule-an-inspection/">Click Here to Request</a></p></div></div><p className="legal"><a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-of-service/">Terms of Service</a></p><div className="social">G　◎　f　▶</div><p className="credit">Designed By Full View Home Inspection Website Design</p></footer>
 </>}
-function Property({cls,title,children}:{cls:string,title:string,children:React.ReactNode}){return <article className={`propertyCard ${cls}`}><div><h3>{title}</h3><p>{children}</p><a href="/inspection-services/">$</a></div></article>}
+function Property({cls,title,children}:{cls:string,title:string,children:React.ReactNode}){return <article className={`propertyItem ${cls}`}><a className="propertyCard" href="/inspection-services/"><div><h3>{title}</h3><p>{children}</p></div></a><a className="propertyArrow" href="/inspection-services/" aria-label={`View ${title.toLowerCase()} inspection services`}>→</a></article>}
 "use client";
 
 import { useEffect, useState } from "react";
