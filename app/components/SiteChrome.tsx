@@ -8,7 +8,14 @@ export function SiteHeader({active}:{active?:"home"|"services"}){
         <a href="/about-us/">ABOUT</a>
         <div className="navDropdown">
           <a className={active==="services"?"active":undefined} href="/inspection-services/">SERVICES <span aria-hidden="true">⌄</span></a>
-          <div className="navSubmenu"><a href="/inspection-services/">Commercial Inspection Services</a></div>
+          <div className="navSubmenu">
+            <a href="/inspection-services/">Commercial Inspection Services</a>
+            <a href="/special-inspector/">Special Inspector</a>
+            <a href="/property-condition-assessments/">Property Condition Assessments</a>
+            <a href="/multi-family-inspections/">Multi-Family Inspections</a>
+            <a href="/thermal-imaging/">Thermal Imaging</a>
+            <a href="/real-estate-agents/">Real Estate Agents</a>
+          </div>
         </div>
         <a href="/#gallery">BLOG</a><a href="/#contact">CONTACT</a>
       </nav>
