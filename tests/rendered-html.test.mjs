@@ -101,4 +101,5 @@ test("keeps the inspection page header in reference order", async () => {
   assert.notEqual(hero, -1);
   assert.notEqual(intro, -1);
   assert.ok(hero < intro, "the inspection hero should render before the intro band");
+  assert.match(page, /inspectionHero"><img[^>]+City-view\.jpg/);
 });
