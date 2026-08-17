@@ -89,3 +89,16 @@ test("keeps the loading skeleton scoped and disposable", async () => {
     access(new URL("public/_sites-preview", templateRoot)),
   );
 });
+
+test("keeps the inspection page header in reference order", async () => {
+  const page = await readFile(
+    new URL("../app/inspection-services/page.tsx", import.meta.url),
+    "utf8",
+  );
+  const hero = page.indexOf('className="inspectionHero"');
+  const intro = page.indexOf('className="inspectionIntro"');
+
+  assert.notEqual(hero, -1);
+  assert.notEqual(intro, -1);
+  assert.ok(hero < intro, "the inspection hero should render before the intro band");
+});
