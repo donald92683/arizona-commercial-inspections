@@ -1,5 +1,5 @@
 export function SiteHeader({active}:{active?:"home"|"services"}){
-  return <header className="siteHeader">
+  return <header className={`siteHeader${active==="services"?" servicesHeader":""}`}>
     <div className="contactBar"><span className="contactItem"><i>▯</i>(480) 808-1170</span><span className="contactItem"><i>✉</i>arizonacpi@gmail.com</span></div>
     <div className="navBar">
       <a href="/" className="brand"><img src="/ArizonaCommercialPropertyInspections-logo.webp" alt="Phoenix Arizona Commercial Building Inspections"/></a>
