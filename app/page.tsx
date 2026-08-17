@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { SiteFooter, SiteHeader } from "./components/SiteChrome";
+
 const A="https://arizonacommercialinspections.com/wp-content/uploads/";
 const services=["ADA ACCESSIBILITY INSPECTIONS","COMMERCIAL BUILDING INSPECTIONS","INDUSTRIAL BUILDING INSPECTIONS","MULTI-FAMILY PROPERTY INSPECTIONS","LEASING INSPECTIONS","ELEVATOR/ESCALATOR INSPECTION","CHURCH INSPECTIONS","SEWER CAMERA INSPECTIONS","TERMITE INSPECTIONS","POOL AND SPA INSPECTIONS","FIRE AND LIFE SAFETY INSPECTION","RETAIL PROPERTY INSPECTIONS","COMMERCIAL BUILDING REVIEW (CUSTOMIZED TO THE SPECIFIC TYPE OF BUILDING)","NATIONAL STANDARDS FOR THE PHYSICAL INSPECTION OF REAL ESTATE (NSPIRE) INSPECTIONS"];
 const gallery=["2021/05/AZCPIimg-400x284.jpg","2021/05/AZCPIimg3-400x284.jpg","2021/05/AZCPIimg4-400x284.jpg","2021/05/image0-400x284.jpeg","2021/05/AZCPI2-400x284.jpg","2021/05/AZCPIimg2-400x284.jpg","2021/05/Untitled-1-400x284.jpg","2024/02/Warehouse-400x284.jpg","2024/02/Storage-facilities-400x284.jpg","2024/02/School-2-400x284.jpg","2024/02/School-1-400x284.jpg","2024/02/Restaurant-400x284.jpg","2024/02/Reatail-400x284.jpg","2024/02/IMG_4528-400x284.jpg","2024/02/Country-club-infrastructure-400x284.jpg","2024/02/Advanced-HVAc-400x284.jpg"];
@@ -6,10 +11,7 @@ export default function Home(){
   const [lightbox,setLightbox]=useState<number|null>(null);
   useEffect(()=>{const close=(event:KeyboardEvent)=>{if(event.key==="Escape")setLightbox(null)};window.addEventListener("keydown",close);return()=>window.removeEventListener("keydown",close)},[]);
   return <>
-  <header className="siteHeader">
-    <div className="contactBar"><span className="contactItem"><i>▯</i>(480) 808-1170</span><span className="contactItem"><i>✉</i>arizonacpi@gmail.com</span></div>
-    <div className="navBar"><a href="/" className="brand"><img src="/ArizonaCommercialPropertyInspections-logo.webp" alt="Phoenix Arizona Commercial Building Inspections"/></a><nav><a className="active" href="/">HOME</a><a href="/about-us/">ABOUT</a><a href="/inspection-services/">SERVICES⌄</a><a href="#gallery">BLOG</a><a href="#contact">CONTACT</a></nav><a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <b>□</b></a><span className="menu">☰</span></div>
-  </header>
+  <SiteHeader active="home"/>
   <main>
     <section className="hero"><div className="heroCard"><h1>ARIZONA</h1><h2>COMMERCIAL PROPERTY INSPECTIONS</h2><p>ARIZONA’S #1 COMMERCIAL INSPECTION COMPANY</p></div><div className="heroButtons"><a href="tel:1-480-808-1170">(480) 808-1170</a><a href="/schedule-an-inspection/">Schedule Now!</a></div></section>
     <section className="intro"><h2>SPECIALIZING IN COMMERCIAL PROPERTY INSPECTIONS IN ARIZONA</h2><p>Welcome to Arizona Commercial Property Inspections. We are a team of professionally certified and highly qualified commercial property<br className="desktop"/> inspectors who have years of experience, and the highest qualifications in the industry.</p></section>
@@ -20,9 +22,6 @@ export default function Home(){
     <section className="serviceSection"><div className="serviceLayout"><div className="serviceCopy"><h2>OUR SERVICES</h2><div className="serviceGrid">{services.map(x=><div key={x}><b>✓</b><span>{x}</span></div>)}</div><a className="blackButton" href="/schedule-an-inspection/">Schedule Now!</a></div><div className="serviceVisual"><div className="serviceRed"/><div className="serviceDark"/><img src={A+"2021/05/AZCPI2.jpg"} alt="Commercial building inspected by Arizona Commercial Property Inspections"/></div></div></section>
     <section className="areas"><div className="areasCopy"><h2>PHOENIX COMMERCIAL INSPECTIONS<br/>& ALL OF ARIZONA</h2><p>Providing commercial property inspection services in the <a href="/">Phoenix Metro Area</a> as well as <a href="/about-us/">Tucson</a>, <a href="/inspection-services/">Flagstaff</a>, <a href="/property-condition-assessments/">Prescott</a>, <a href="/showlow-az-commercial-building-inspections/">Showlow</a>, <a href="/kingman-arizona-commercial-building-inspections/">Kingman</a>, <a href="/yuma-az-commercial-inspections/">Yuma</a>, <a href="/payson-az-commercial-building-inspections/">Payson</a>, and <a href="/lake-havasu-arizona-commercial-building-inspections/">Lake Havasu</a>. If you need a commercial property inspection anywhere in Arizona, give us a call: <strong>(480) 808-1170</strong></p><div className="mapWrap"><iframe title="Arizona Commercial Property Inspections service area map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1667542.3276277494!2d-112.96346224375!3d35.283149825751536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b67348d22958d%3A0x8c20d1d807fa8b98!2sArizona%20Commercial%20Property%20Inspections!5e0!3m2!1sen!2sus!4v1786573127143!5m2!1sen!2sus" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div></div></section>
   </main>
-  <footer id="contact"><div className="footerTop"><div className="footerContacts"><div><i>▯</i><h4>CALL US</h4><p><a href="tel:1-480-808-1170">(480) 808-1170</a></p></div><div><i>✉</i><h4>EMAIL US</h4><p><a href="mailto:arizonacpi@gmail.com">Click Here to Email</a></p></div><div><i>□</i><h4>REQUEST INSPECTION</h4><p><a href="/schedule-an-inspection/">Click Here to Request</a></p></div></div><p className="legal"><a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-of-service/">Terms of Service</a></p><div className="social"><a href="https://www.google.com/maps/place/Arizona+Commercial+Property+Inspections" aria-label="Google">G</a><a href="https://www.instagram.com/azcpi/" aria-label="Instagram">◎</a><a href="https://www.facebook.com/Arizonainspections/" aria-label="Facebook">f</a><a href="https://www.youtube.com/@arizonacommercialinspections" aria-label="YouTube">▶</a></div></div></footer>
+  <SiteFooter/>
 </>}
 function Property({cls,title,children}:{cls:string,title:string,children:React.ReactNode}){return <article className={`propertyItem ${cls}`}><a className="propertyCard" href="/inspection-services/"><div><h3>{title}</h3><p>{children}</p></div></a><a className="propertyArrow" href="/inspection-services/" aria-label={`View ${title.toLowerCase()} inspection services`}>→</a></article>}
-"use client";
-
-import { useEffect, useState } from "react";
