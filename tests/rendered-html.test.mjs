@@ -103,3 +103,17 @@ test("keeps the inspection page header in reference order", async () => {
   assert.ok(hero < intro, "the inspection hero should render before the intro band");
   assert.match(page, /inspectionHero"><img[^>]+City-view\.jpg/);
 });
+
+test("includes the complete special inspector route", async () => {
+  const page = await readFile(
+    new URL("../app/special-inspector/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(page, /SPECIAL INSPECTOR \(SI\) SERVICES IN PHOENIX, AZ/);
+  assert.match(page, /WHAT THEY DO/);
+  assert.match(page, /WHY A SPECIAL INSPECTOR IS IMPORTANT/);
+  assert.match(page, /OUR CERTIFICATIONS/);
+  assert.match(page, /Frequently Asked Questions: Special Inspector/);
+  assert.match(page, /10\. When are inspection reports due\?/);
+});
