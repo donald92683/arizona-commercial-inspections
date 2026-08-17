@@ -78,3 +78,16 @@ body{overflow-x:hidden}.commercialOverview{width:1370px;max-width:calc(100% - 64
 .inspectionIntro p{width:1320px;max-width:calc(100% - 48px);height:49px;margin:0 auto 33px;font-size:20px;line-height:1.35}
 .inspectionIntro .blackButton{display:inline-flex;align-items:center;justify-content:center;width:176px;height:63px;margin:0;padding:0 20px;font-size:24px;line-height:1}
 @media(max-width:760px){.inspectionIntro{height:auto;padding:36px 18px;border-top-width:3px}.inspectionIntro h2,.inspectionIntro p{width:auto;max-width:none;height:auto}.inspectionIntro h2{font-size:30px;line-height:1.2;padding-bottom:0}.inspectionIntro p{margin:8px auto 20px;font-size:15px;line-height:1.6}.inspectionIntro .blackButton{width:147px;height:52px;font-size:19px}}
+
+/* Screenshot-matched commercial inspections split feature */
+@media(min-width:1081px){
+  .commercialOverview{width:1444px;max-width:calc(100% - 96px);height:997px;min-height:997px;padding:0;grid-template-columns:minmax(0,681px) minmax(0,684px);gap:79px;box-shadow:-100vw 0 0 100vw var(--charcoal),100vw 0 0 100vw #fff}
+  .overviewImages{width:100%;height:997px;min-height:997px}
+  .overviewImages img,.overviewImages img+img{width:100%;height:50%;object-fit:cover;opacity:1}
+  .overviewCopy{width:100%;height:997px;padding:102px 0 48px}
+  .overviewCopy h2{width:100%;height:auto;margin:0 0 31px;padding:0;font:700 55px/1.25 Poppins,sans-serif;letter-spacing:-1px}
+  .overviewCopy p,.overviewCopy li{font-size:20px;line-height:1.55}
+  .overviewCopy p{margin:0 0 20px;padding:0}
+  .overviewCopy ul{width:100%;height:auto;margin:0 0 25px;padding:0 0 0 20px}
+  .overviewCopy .blackButton{display:inline-flex;align-items:center;justify-content:center;width:221px;height:63px;margin-top:18px;padding:0 20px;font-size:24px;line-height:1}
+}
