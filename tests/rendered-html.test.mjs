@@ -91,3 +91,26 @@ test("includes the complete multi-family inspections route", async () => {
   assert.match(page, /Physical Needs Assessments/);
   assert.match(page, /CHOOSE US FOR YOUR MULTI-FAMILY PROPERTY/);
 });
+
+test("includes the complete thermal imaging route", async () => {
+  const page = await readFile(
+    new URL("../app/thermal-imaging/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(page, /THERMAL IMAGING/);
+  assert.match(page, /Innovative Thermal/);
+  assert.match(page, /ThermalAccordion/);
+  assert.match(page, /BOOK YOUR THERMAL INSPECTION/);
+  assert.match(page, /ARIZONA COMMERCIAL THERMAL IMAGING/);
+
+  const accordion = await readFile(
+    new URL("../app/thermal-imaging/ThermalAccordion.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(accordion, /Solar \/ Photovoltaic System Scan/);
+  assert.match(accordion, /Flat Roof Moisture Intrusion Scan/);
+  assert.match(accordion, /Electrical Equipment Maintenance Scan/);
+  assert.match(accordion, /Building Envelope Efficiency Scan/);
+  assert.match(accordion, /Fire Damage Prevention and Property Safety/);
+});
