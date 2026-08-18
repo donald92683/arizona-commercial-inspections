@@ -114,3 +114,25 @@ test("includes the complete thermal imaging route", async () => {
   assert.match(accordion, /Building Envelope Efficiency Scan/);
   assert.match(accordion, /Fire Damage Prevention and Property Safety/);
 });
+
+test("includes the complete real estate agents route", async () => {
+  const page = await readFile(
+    new URL("../app/real-estate-agents/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(page, /REAL ESTATE AGENTS/);
+  assert.match(page, /Premier Commercial/);
+  assert.match(page, /AgentAccordion/);
+  assert.match(page, /CONTACT US ABOUT YOUR REAL ESTATE NEEDS TODAY/);
+  assert.match(page, /SCHEDULE ONLINE/);
+
+  const accordion = await readFile(
+    new URL("../app/real-estate-agents/AgentAccordion.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(accordion, /Comprehensive Inspection Services Tailored for Arizona/);
+  assert.match(accordion, /One-Stop Shop for All Your Due Diligence Requirements/);
+  assert.match(accordion, /Unrivaled Local Expertise and Insight/);
+  assert.match(accordion, /Cutting-Edge Technology and Comprehensive Reporting/);
+});
