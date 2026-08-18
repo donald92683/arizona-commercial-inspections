@@ -20,13 +20,13 @@ export default function ContactUsPage() {
         <div className="contactPanel">
           <div className="contactActions">
             <a className="contactAction" href="tel:1-480-808-1170">
-              <i aria-hidden="true">▯</i><span><strong>CALL US</strong><small>(480) 808-1170</small></span>
+              <i aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="9" y="3" width="14" height="26" rx="2" /><path d="M13 6h6M15 26h2" /></svg></i><span><strong>CALL US</strong><small>(480) 808-1170</small></span>
             </a>
             <a className="contactAction" href="mailto:arizonacpi@gmail.com">
-              <i aria-hidden="true">✉</i><span><strong>EMAIL US</strong><small>Click Here to Email</small></span>
+              <i aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="3" y="7" width="26" height="18" rx="1" /><path d="m4 9 12 10L28 9M4 24l8-8m16 8-8-8" /></svg></i><span><strong>EMAIL US</strong><small>Click Here to Email</small></span>
             </a>
             <Link className="contactAction" href="/schedule-an-inspection/">
-              <i aria-hidden="true">□</i><span><strong>REQUEST AN INSPECTION</strong><small>Click Here to REQUEST</small></span>
+              <i aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4" y="7" width="24" height="21" rx="1" /><path d="M4 12h24M10 3v7m12-7v7" /></svg></i><span><strong>REQUEST AN INSPECTION</strong><small>Click Here to REQUEST</small></span>
             </Link>
           </div>
           <iframe className="contactMap" src={mapUrl} title="Map of Arizona" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
