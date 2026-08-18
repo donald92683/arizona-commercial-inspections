@@ -136,3 +136,29 @@ test("includes the complete real estate agents route", async () => {
   assert.match(accordion, /Unrivaled Local Expertise and Insight/);
   assert.match(accordion, /Cutting-Edge Technology and Comprehensive Reporting/);
 });
+
+test("includes the complete contact us route", async () => {
+  const page = await readFile(
+    new URL("../app/contact-us/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(page, /CONTACT US/);
+  assert.match(page, /CALL US/);
+  assert.match(page, /EMAIL US/);
+  assert.match(page, /REQUEST AN INSPECTION/);
+  assert.match(page, /Map of Arizona/);
+  assert.match(page, /schedule-an-inspection/);
+  assert.match(page, /ContactForm/);
+
+  const form = await readFile(
+    new URL("../app/contact-us/ContactForm.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(form, /First Name/);
+  assert.match(form, /Email \*/);
+  assert.match(form, /transactional messages/);
+  assert.match(form, /marketing and promotional messages/);
+  assert.match(form, /Privacy Policy/);
+  assert.match(form, /Terms of Service/);
+});
