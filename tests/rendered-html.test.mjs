@@ -117,3 +117,16 @@ test("includes the complete special inspector route", async () => {
   assert.match(page, /Frequently Asked Questions: Special Inspector/);
   assert.match(page, /10\. When are inspection reports due\?/);
 });
+
+test("includes the complete property condition assessments route", async () => {
+  const page = await readFile(
+    new URL("../app/property-condition-assessments/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(page, /PROPERTY CONDITION<br \/>ASSESSMENTS/);
+  assert.match(page, /Your Premier<br \/>Partner for Expert<br \/>Assessments/);
+  assert.match(page, /AssessmentAccordion/);
+  assert.match(page, /BOOK YOUR CONDITION ASSESSMENT/);
+  assert.match(page, /ARIZONA PROPERTY CONDITION/);
+});
