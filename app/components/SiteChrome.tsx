@@ -9,11 +9,13 @@ function HeaderIcon({name}:{name:"phone"|"email"|"chevron"|"calendar"}) {
 }
 
 export function SiteHeader({active}:{active?:"home"|"services"}){
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return <header className={`siteHeader${active==="services"?" servicesHeader":""}`}>
     <div className="contactBar"><span className="contactItem"><i><HeaderIcon name="phone" /></i><a href="tel:1-480-808-1170">(480) 808-1170</a></span><span className="contactItem"><i><HeaderIcon name="email" /></i><a href="mailto:arizonacpi@gmail.com">arizonacpi@gmail.com</a></span></div>
     <div className="navBar">
       <a href="/" className="brand"><img src="/ArizonaCommercialPropertyInspections-logo.webp" alt="Phoenix Arizona Commercial Building Inspections"/></a>
-      <nav aria-label="Main navigation">
+      <nav id="main-navigation" className={menuOpen ? "mobileOpen" : undefined} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
         <a className={active==="home"?"active":undefined} href="/">HOME</a>
         <a href="/about-us/">ABOUT</a>
         <div className="navDropdown">
