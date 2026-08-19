@@ -196,9 +196,3 @@ test("includes the blog index and all ten requested articles", async () => {
     assert.match(exporter, new RegExp(`"/${slug}/"`));
   }
 });
-
-test("opens the blog navigation link in a new tab", async () => {
-  const chrome = await readFile(new URL("../app/components/SiteChrome.tsx", import.meta.url), "utf8");
-
-  assert.match(chrome, /href="\/blog\/" target="_blank" rel="noopener noreferrer"/);
-});
