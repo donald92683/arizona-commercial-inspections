@@ -14,9 +14,13 @@ function HeaderIcon({name}:{name:"phone"|"email"|"chevron"|"calendar"}) {
 
 export function SiteHeader({active}:{active?:"home"|"services"}){
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
-    if (!menuOpen) return;
+    if (!menuOpen) {
+      setServicesOpen(false);
+      return;
+    }
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
     };
@@ -28,12 +32,13 @@ export function SiteHeader({active}:{active?:"home"|"services"}){
     <div className="contactBar"><span className="contactItem"><i><HeaderIcon name="phone" /></i><a href="tel:1-480-808-1170">(480) 808-1170</a></span><span className="contactItem"><i><HeaderIcon name="email" /></i><a href="mailto:arizonacpi@gmail.com">arizonacpi@gmail.com</a></span></div>
     <div className="navBar">
       <a href="/" className="brand"><img src="/ArizonaCommercialPropertyInspections-logo.webp" alt="Phoenix Arizona Commercial Building Inspections"/></a>
-      <nav id="main-navigation" className={menuOpen ? "mobileOpen" : undefined} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
+      <nav id="main-navigation" className={menuOpen ? "mobileOpen" : undefined} aria-label="Main navigation" onClick={(event) => { if ((event.target as HTMLElement).closest("a")) setMenuOpen(false); }}>
         <a className={active==="home"?"active":undefined} href="/">HOME</a>
         <a href="/about-us/">ABOUT</a>
         <div className="navDropdown">
           <a className={active==="services"?"active":undefined} href="/inspection-services/">SERVICES <HeaderIcon name="chevron" /></a>
-          <div className="navSubmenu">
+          <button className="mobileServicesToggle" type="button" aria-expanded={servicesOpen} aria-controls="services-submenu" aria-label={servicesOpen ? "Hide service links" : "Show service links"} onClick={() => setServicesOpen((open) => !open)}><HeaderIcon name="chevron" /></button>
+          <div id="services-submenu" className={`navSubmenu${servicesOpen ? " mobileSubmenuOpen" : ""}`}>
             <a href="/inspection-services/">Commercial Inspection Services</a>
             <a href="/special-inspector/">Special Inspector</a>
             <a href="/property-condition-assessments/">Property Condition Assessments</a>
