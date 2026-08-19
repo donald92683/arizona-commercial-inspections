@@ -171,3 +171,28 @@ test("publishes the contact us route in the static export", async () => {
 
   assert.match(exporter, /"\/contact-us\/"/);
 });
+
+test("includes the blog index and all ten requested articles", async () => {
+  const index = await readFile(new URL("../app/blog/page.tsx", import.meta.url), "utf8");
+  const posts = await readFile(new URL("../app/blog/posts.ts", import.meta.url), "utf8");
+  const exporter = await readFile(new URL("../scripts/export-github-pages.mjs", import.meta.url), "utf8");
+
+  assert.match(index, /OUR BLOG/);
+  assert.match(index, /blogPosts\.map/);
+  const slugs = [
+    "paradigms-of-precision-how-cutting-edge-drones-are-transforming-roof-inspections",
+    "unveiling-the-secrets-of-old-wiring-that-could-power-new-profit",
+    "why-your-hvac-system-might-be-repelling-future-tenants",
+    "through-the-eyes-of-an-investor-the-overlooked-details-of-property-valuation",
+    "roof-mysteries-decoding-the-language-of-leaks-and-longevity",
+    "the-untold-story-of-parking-structures-a-quiet-revolution-in-compliance",
+    "warning-signals-how-fire-sprinklers-can-make-or-break-tenant-safety-and-satisfaction",
+    "what-your-buildings-elevator-tells-us-about-its-future-health",
+    "is-your-building-an-hvac-time-bomb-discover-the-hidden-threats",
+    "the-unseen-battle-fire-sprinklers-vs-code-compliance-nightmares",
+  ];
+  for (const slug of slugs) {
+    assert.match(posts, new RegExp(`slug: "${slug}"`));
+    assert.match(exporter, new RegExp(`"/${slug}/"`));
+  }
+});
