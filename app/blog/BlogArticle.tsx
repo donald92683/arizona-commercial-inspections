@@ -15,7 +15,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           {section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
         </section>)}
       </article>
-      <aside className="recentPosts"><h2>Recent Posts</h2>{blogPosts.map((item) => <Link href={`/${item.slug}/`} key={item.slug}>{item.title}</Link>)}</aside>
+      <aside className="recentPosts"><h2>Recent Posts</h2>{blogPosts.map((item) => <Link href={`/${item.slug}/`} key={item.slug} target="_blank" rel="noopener noreferrer">{item.title}</Link>)}</aside>
     </main>
     <SiteFooter />
   </>;
