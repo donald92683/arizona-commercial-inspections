@@ -12,7 +12,7 @@ function HeaderIcon({name}:{name:"phone"|"email"|"chevron"|"calendar"}) {
   return <svg className={`headerIcon ${name}`} viewBox="0 0 24 24" aria-hidden="true" focusable="false">{paths[name]}</svg>;
 }
 
-export function SiteHeader({active}:{active?:"home"|"services"}){
+export function SiteHeader({active}:{active?:"home"|"about"|"services"}){
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export function SiteHeader({active}:{active?:"home"|"services"}){
       <a href="/" className="brand"><img src="/ArizonaCommercialPropertyInspections-logo.webp" alt="Phoenix Arizona Commercial Building Inspections"/></a>
       <nav id="main-navigation" className={menuOpen ? "mobileOpen" : undefined} aria-label="Main navigation" onClick={(event) => { if ((event.target as HTMLElement).closest("a")) setMenuOpen(false); }}>
         <a className={active==="home"?"active":undefined} href="/">HOME</a>
-        <a href="/about-us/">ABOUT</a>
+        <a className={active==="about"?"active":undefined} href="/about-us/">ABOUT</a>
         <div className="navDropdown">
           <a className={active==="services"?"active":undefined} href="/inspection-services/" aria-expanded={servicesOpen} aria-controls="services-submenu" onClick={(event) => { if (window.matchMedia("(max-width: 980px)").matches && !servicesOpen) { event.preventDefault(); setServicesOpen(true); } }}>SERVICES</a>
           <div id="services-submenu" className={`navSubmenu${servicesOpen ? " mobileSubmenuOpen" : ""}`}>

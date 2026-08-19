@@ -49,6 +49,21 @@ test("keeps the inspection page header in reference order", async () => {
   assert.match(page, /inspectionHero"><img[^>]+City-view\.jpg/);
 });
 
+test("includes the complete about us route", async () => {
+  const page = await readFile(
+    new URL("../app/about-us/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(page, /YOUR PREMIER/);
+  assert.match(page, /CERTIFIED LEAD THE WAY IN COMMERCIAL INSPECTIONS/);
+  assert.match(page, /INSPECTIONS WE HAVE PERFORMED/);
+  assert.match(page, /OUR SOCIALS/);
+  assert.match(page, /TUCSON COMMERCIAL INSPECTIONS &amp; ALL OF ARIZONA/);
+  assert.match(page, /<source src="\/CCPIA-Promo\.mp4" type="video\/mp4" \/>/);
+  assert.equal((page.match(/wp-content\/uploads/g) ?? []).length, 12);
+});
+
 test("includes the complete special inspector route", async () => {
   const page = await readFile(
     new URL("../app/special-inspector/page.tsx", import.meta.url),
