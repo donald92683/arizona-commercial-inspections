@@ -14,6 +14,7 @@ const routes = [
   "/multi-family-inspections/",
   "/thermal-imaging/",
   "/real-estate-agents/",
+  "/contact-us/",
   "/privacy-policy/",
   "/terms-of-service/",
   "/showlow-az-commercial-building-inspections/",
@@ -36,7 +37,9 @@ try {
     try {
       const response = await fetch("http://127.0.0.1:3000/");
       if (response.ok) { ready = true; break; }
-    } catch {}
+    } catch {
+      // The preview server may still be starting; retry until the limit below.
+    }
     await new Promise((resolve) => setTimeout(resolve, 500));
   }
   if (!ready) throw new Error("The local site did not start in time.");
