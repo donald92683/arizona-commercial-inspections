@@ -162,3 +162,12 @@ test("includes the complete contact us route", async () => {
   assert.match(form, /Privacy Policy/);
   assert.match(form, /Terms of Service/);
 });
+
+test("publishes the contact us route in the static export", async () => {
+  const exporter = await readFile(
+    new URL("../scripts/export-github-pages.mjs", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(exporter, /"\/contact-us\/"/);
+});
