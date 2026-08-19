@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 function HeaderIcon({name}:{name:"phone"|"email"|"chevron"|"calendar"}) {
   const paths = {
     phone: <><rect x="7" y="2" width="10" height="20" rx="1.5"/><path d="M10 5h4M11 19h2"/></>,
@@ -35,8 +31,7 @@ export function SiteHeader({active}:{active?:"home"|"services"}){
         </div>
         <a href="/blog/" target="_blank" rel="noopener noreferrer">BLOG</a><a href="/contact-us/">CONTACT</a>
       </nav>
-      <a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <HeaderIcon name="calendar" /></a>
-      <button className="menu" type="button" aria-controls="main-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? "×" : "☰"}</button>
+      <a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <HeaderIcon name="calendar" /></a><span className="menu">☰</span>
     </div>
   </header>
 }
