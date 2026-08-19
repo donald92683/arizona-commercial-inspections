@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 function HeaderIcon({name}:{name:"phone"|"email"|"chevron"|"calendar"}) {
   const paths = {
     phone: <><rect x="7" y="2" width="10" height="20" rx="1.5"/><path d="M10 5h4M11 19h2"/></>,
@@ -9,11 +13,13 @@ function HeaderIcon({name}:{name:"phone"|"email"|"chevron"|"calendar"}) {
 }
 
 export function SiteHeader({active}:{active?:"home"|"services"}){
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return <header className={`siteHeader${active==="services"?" servicesHeader":""}`}>
     <div className="contactBar"><span className="contactItem"><i><HeaderIcon name="phone" /></i><a href="tel:1-480-808-1170">(480) 808-1170</a></span><span className="contactItem"><i><HeaderIcon name="email" /></i><a href="mailto:arizonacpi@gmail.com">arizonacpi@gmail.com</a></span></div>
     <div className="navBar">
       <a href="/" className="brand"><img src="/ArizonaCommercialPropertyInspections-logo.webp" alt="Phoenix Arizona Commercial Building Inspections"/></a>
-      <nav aria-label="Main navigation">
+      <nav id="main-navigation" className={menuOpen ? "mobileOpen" : undefined} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
         <a className={active==="home"?"active":undefined} href="/">HOME</a>
         <a href="/about-us/">ABOUT</a>
         <div className="navDropdown">
@@ -29,7 +35,8 @@ export function SiteHeader({active}:{active?:"home"|"services"}){
         </div>
         <a href="/blog/" target="_blank" rel="noopener noreferrer">BLOG</a><a href="/contact-us/">CONTACT</a>
       </nav>
-      <a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <HeaderIcon name="calendar" /></a><span className="menu">☰</span>
+      <a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <HeaderIcon name="calendar" /></a>
+      <button className="menu" type="button" aria-controls="main-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? "×" : "☰"}</button>
     </div>
   </header>
 }
