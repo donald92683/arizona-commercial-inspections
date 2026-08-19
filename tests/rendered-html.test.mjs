@@ -202,3 +202,11 @@ test("opens the blog navigation link in a new tab", async () => {
 
   assert.match(chrome, /href="\/blog\/" target="_blank" rel="noopener noreferrer"/);
 });
+
+test("opens individual blog links in a new tab", async () => {
+  const index = await readFile(new URL("../app/blog/page.tsx", import.meta.url), "utf8");
+  const article = await readFile(new URL("../app/blog/BlogArticle.tsx", import.meta.url), "utf8");
+
+  assert.ok(index.includes('href={`/${post.slug}/`} target="_blank" rel="noopener noreferrer"'));
+  assert.ok(article.includes('href={`/${item.slug}/`} key={item.slug} target="_blank" rel="noopener noreferrer"'));
+});
