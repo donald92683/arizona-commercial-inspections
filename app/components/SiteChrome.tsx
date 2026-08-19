@@ -17,7 +17,7 @@ export function SiteHeader({active}:{active?:"home"|"services"}){
             <a href="/real-estate-agents/">Real Estate Agents</a>
           </div>
         </div>
-        <a href="/blog/">BLOG</a><a href="/contact-us/">CONTACT</a>
+        <a href="/blog/" target="_blank" rel="noopener noreferrer">BLOG</a><a href="/contact-us/">CONTACT</a>
       </nav>
       <a className="request" href="/schedule-an-inspection/">REQUEST INSPECTION <b>□</b></a><span className="menu">☰</span>
     </div>
