@@ -26,9 +26,21 @@ for (const file of await sourceFiles(appDirectory)) {
     `[\"'](20\\d{2}/[^\"']+\\.${imageExtension})[\"']`,
     "gi",
   );
+  const localUploadPattern = new RegExp(
+    `/uploads/(20\\d{2}/[^'\"()\\s]+\\.${imageExtension})`,
+    "gi",
+  );
 
   for (const match of source.matchAll(fullUrlPattern)) paths.add(decodeURIComponent(match[1]));
   for (const match of source.matchAll(relativePattern)) paths.add(match[1]);
+  for (const match of source.matchAll(localUploadPattern)) paths.add(decodeURIComponent(match[1]));
+}
+
+// The homepage lightbox derives full-size gallery URLs from thumbnail names.
+for (const relativePath of [...paths]) {
+  if (relativePath.includes("-400x284.")) {
+    paths.add(relativePath.replace("-400x284.", "."));
+  }
 }
 
 const missing = [];
@@ -37,7 +49,7 @@ for (const relativePath of [...paths].sort()) {
   const originalUrl = new URL(relativePath, uploadsBase);
   let response = await fetch(originalUrl);
   if (!response.ok) {
-    const archivedUrl = `https://web.archive.org/web/20260801000000id_/${originalUrl}`;
+    const archivedUrl = `https://web.archive.org/web/20260519070046id_/${originalUrl}`;
     response = await fetch(archivedUrl);
   }
   if (!response.ok || !response.headers.get("content-type")?.startsWith("image/")) {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { ThermalAccordion } from "./ThermalAccordion";
 
-const uploads = "https://arizonacommercialinspections.com/wp-content/uploads/";
+const uploads = "/uploads/";
 
 export const metadata: Metadata = {
   title: "Thermal Imaging - Arizona Commercial Property Inspections",

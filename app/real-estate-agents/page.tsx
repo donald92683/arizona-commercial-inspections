@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { AgentAccordion } from "./AgentAccordion";
 
-const uploads = "https://arizonacommercialinspections.com/wp-content/uploads/";
+const uploads = "/uploads/";
 
 export const metadata: Metadata = {
   title: "Real Estate Agents - Arizona Commercial Property Inspections",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { InspectionAccordion } from "./InspectionAccordion";
 
-const A="https://arizonacommercialinspections.com/wp-content/uploads/";
+const A="/uploads/";
 const coreServices=[
   ["Property Condition Inspections","Comprehensive assessments of the overall condition of a commercial property, including its structural elements, systems, and components. Inspection professionals conduct a thorough examination, utilizing a checklist that covers foundations, roofing, HVAC systems, plumbing, electrical, and other critical components. They identify any existing issues or potential concerns that might affect the property’s value or safety. The inspection may involve visual examinations, testing, and documentation of findings."],
   ["Property Condition Assessments","A detailed review of a property's current condition for buyers, owners, lenders, and investors."],

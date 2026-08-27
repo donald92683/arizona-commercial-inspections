@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { AssessmentAccordion } from "./AssessmentAccordion";
 
-const uploads = "https://arizonacommercialinspections.com/wp-content/uploads/";
+const uploads = "/uploads/";
 
 export const metadata: Metadata = {
   title: "Property Condition Assessments - Arizona Commercial Property Inspections",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
-const uploads = "https://arizonacommercialinspections.com/wp-content/uploads/";
+const uploads = "/uploads/";
 
 const duties = [
   ["Specialized Inspections:", "Special inspectors are hired to verify the quality and compliance of specific construction aspects, often detailed in the project’s plans and specifications."],

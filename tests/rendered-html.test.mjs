@@ -61,7 +61,8 @@ test("includes the complete about us route", async () => {
   assert.match(page, /OUR SOCIALS/);
   assert.match(page, /TUCSON COMMERCIAL INSPECTIONS &amp; ALL OF ARIZONA/);
   assert.match(page, /<source src="\/CCPIA-Promo\.mp4" type="video\/mp4" \/>/);
-  assert.equal((page.match(/wp-content\/uploads/g) ?? []).length, 12);
+  assert.equal((page.match(/\/uploads\//g) ?? []).length, 12);
+  assert.doesNotMatch(page, /wp-content\/uploads/);
 });
 
 test("includes the complete special inspector route", async () => {
