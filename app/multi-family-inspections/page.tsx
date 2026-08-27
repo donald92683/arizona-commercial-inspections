@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
-const uploads = "https://arizonacommercialinspections.com/wp-content/uploads/";
+const uploads = "/uploads/";
 
 export const metadata: Metadata = {
   title: "Multi-Family Inspections - Arizona Commercial Property Inspections",

@@ -8,16 +8,16 @@ export const metadata: Metadata = {
 };
 
 const certifications = [
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2021/05/ccpia_logo_tagline_small-1.png", "Certified Commercial Property Inspectors Association"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2021/05/new_logo.jpg", "National Association of Certified Building Inspectors"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/CMI.jpg", "Certified Master Inspector"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/certified-professional-inspector-cpi-logo.jpg", "Certified Professional Inspector"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/nachiinstructor.jpg", "InterNACHI Instructor"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/astm.jpg", "ASTM International"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/icc.jpg", "International Code Council"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/1588271856429-roofinspectorcertificationlogoprogram.jpg", "Certified Roof Inspector"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/certified-multi-unit-housing-inspector.jpg", "Certified Multi-Unit Housing Inspector"],
-  ["https://arizonacommercialinspections.com/wp-content/uploads/2024/02/ifc-1.jpg", "Infrared Training Center"],
+  ["/uploads/2021/05/ccpia_logo_tagline_small-1.png", "Certified Commercial Property Inspectors Association"],
+  ["/uploads/2021/05/new_logo.jpg", "National Association of Certified Building Inspectors"],
+  ["/uploads/2024/02/CMI.jpg", "Certified Master Inspector"],
+  ["/uploads/2024/02/certified-professional-inspector-cpi-logo.jpg", "Certified Professional Inspector"],
+  ["/uploads/2024/02/nachiinstructor.jpg", "InterNACHI Instructor"],
+  ["/uploads/2024/02/astm.jpg", "ASTM International"],
+  ["/uploads/2024/02/icc.jpg", "International Code Council"],
+  ["/uploads/2024/02/1588271856429-roofinspectorcertificationlogoprogram.jpg", "Certified Roof Inspector"],
+  ["/uploads/2024/02/certified-multi-unit-housing-inspector.jpg", "Certified Multi-Unit Housing Inspector"],
+  ["/uploads/2024/02/ifc-1.jpg", "Infrared Training Center"],
 ];
 
 const inspections = ["Digital Arts College", "Entire Small Town Infrastructure", "Summer Camp", "Commercial Bakery", "Large Retail", "Large Strip Center", "Storage Facilities", "Large Warehouse", "Small Warehouse", "Hotels", "Multi-Family Housing", "Restaurants"];
@@ -38,8 +38,8 @@ export default function AboutUsPage() {
           <a className="blackButton aboutUsPhone" href="tel:1-480-808-1170">(480) 808-1170</a>
         </div>
         <div className="aboutUsPhotos">
-          <img src="https://arizonacommercialinspections.com/wp-content/uploads/2021/05/AZCPIimg4.jpg" alt="Tucson AZ commercial inspections" />
-          <img src="https://arizonacommercialinspections.com/wp-content/uploads/2021/05/AZCPIimg2.jpg" alt="Tucson commercial building inspections" />
+          <img src="/uploads/2021/05/AZCPIimg4.jpg" alt="Tucson AZ commercial inspections" />
+          <img src="/uploads/2021/05/AZCPIimg2.jpg" alt="Tucson commercial building inspections" />
         </div>
       </section>
       <section className="aboutUsCredentials">
