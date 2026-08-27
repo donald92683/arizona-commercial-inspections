@@ -185,6 +185,8 @@ test("publishes the contact us route in the static export", async () => {
   );
 
   assert.match(exporter, /"\/contact-us\/"/);
+  assert.match(exporter, /const basePath = "";/);
+  assert.doesNotMatch(exporter, /const basePath = "\/arizona-commercial-inspections";/);
 });
 
 test("includes the blog index and all ten requested articles", async () => {

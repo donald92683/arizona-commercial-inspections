@@ -3,7 +3,10 @@ import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const output = path.resolve("_site");
-const basePath = "/arizona-commercial-inspections";
+// The production site is served from the root of its custom domain.
+// Keep generated asset and navigation URLs root-relative so CSS, JavaScript,
+// images, and routes resolve correctly on arizonacommercialinspections.com.
+const basePath = "";
 const routes = [
   "/",
   "/inspection-services/",
