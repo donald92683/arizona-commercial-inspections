@@ -46,7 +46,11 @@ test("keeps the inspection page header in reference order", async () => {
   assert.notEqual(hero, -1);
   assert.notEqual(intro, -1);
   assert.ok(hero < intro, "the inspection hero should render before the intro band");
-  assert.match(page, /inspectionHero"><img[^>]+City-view\.jpg/);
+  assert.match(page, /inspectionHero"><img[^>]+architecture-1448221_1920\.jpg/);
+  assert.match(page, /overviewImages"><img[^>]+Untitled-1\.jpg/);
+  assert.match(page, /overviewImages">[\s\S]*AZCPIimg4\.jpg/);
+  assert.match(page, /Home-Inspection-Software2-e1572267234321\.png/);
+  assert.doesNotMatch(page, /City-view\.jpg|Advanced-HVAC-unit\.jpg|AZCPIimg5\.jpg/);
 });
 
 test("includes the complete about us route", async () => {
