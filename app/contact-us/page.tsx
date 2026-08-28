@@ -13,7 +13,7 @@ const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380379.50
 export default function ContactUsPage() {
   return <>
     <SiteHeader />
-    <main className="contactPage">
+    <main id="main-content" className="contactPage">
       <section className="contactHero"><div><h1>CONTACT US</h1></div></section>
       <ContactForm />
       <section className="contactMain">

@@ -35,6 +35,24 @@ test("server-renders the Arizona commercial inspections home page", async () => 
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview/);
 });
 
+test("ships the modern accessible and search-optimized design system", async () => {
+  const [layout, styles, chrome] = await Promise.all([
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/SiteChrome.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(layout, /application\/ld\+json/);
+  assert.match(layout, /LocalBusiness/);
+  assert.match(layout, /metadataBase/);
+  assert.match(layout, /openGraph/);
+  assert.match(layout, /Skip to main content/);
+  assert.match(styles, /Issue 48 — modern site-wide design system/);
+  assert.match(styles, /prefers-reduced-motion:reduce/);
+  assert.match(styles, /@keyframes revealUp/);
+  assert.match(chrome, /Clarity for every commercial property decision/);
+});
+
 test("uses the issue 44 hero and moves the previous hero into the inspector section", async () => {
   const [page, styles, heroImage] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -66,6 +84,8 @@ test("keeps the inspection page header in reference order", async () => {
   assert.match(page, /overviewImages">[\s\S]*AZCPIimg4\.jpg/);
   assert.match(page, /Home-Inspection-Software2-e1572267234321\.png/);
   assert.doesNotMatch(page, /City-view\.jpg|Advanced-HVAC-unit\.jpg|AZCPIimg5\.jpg/);
+  assert.equal((page.match(/name="additional-inspection-services"/g) ?? []).length, 2);
+  assert.equal((page.match(/open=\{i===0\}/g) ?? []).length, 1);
 });
 
 test("includes the complete about us route", async () => {

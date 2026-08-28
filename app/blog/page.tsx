@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return <>
     <SiteHeader />
-    <main className="blogPage">
+    <main id="main-content" className="blogPage">
       <section className="blogHero"><div><h1>OUR BLOG</h1></div></section>
       <section className="blogList">{blogPosts.map((post) => <article key={post.slug}>
         <h2><Link href={`/${post.slug}/`} target="_blank" rel="noopener noreferrer">{post.title}</Link></h2>

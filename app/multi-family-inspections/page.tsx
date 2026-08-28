@@ -31,7 +31,7 @@ const inspectionServices = [
 export default function MultiFamilyInspectionsPage() {
   return <>
     <SiteHeader active="services" />
-    <main className="multiFamilyPage">
+    <main id="main-content" className="multiFamilyPage">
       <section className="multiFamilyHero"><div><h1>MULTI-FAMILY</h1></div></section>
       <section className="multiFamilyIntro">
         <h2>PROPERTY INSPECTIONS FOR MULTI-FAMILY PROPERTIES</h2>

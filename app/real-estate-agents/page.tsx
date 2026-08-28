@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RealEstateAgentsPage() {
   return <>
     <SiteHeader active="services" />
-    <main className="agentsPage">
+    <main id="main-content" className="agentsPage">
       <section className="agentsHero"><div><h1>REAL ESTATE AGENTS</h1></div></section>
       <section className="agentsOverview">
         <div className="agentsImageColumn">

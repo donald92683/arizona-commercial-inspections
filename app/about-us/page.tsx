@@ -25,7 +25,7 @@ const inspections = ["Digital Arts College", "Entire Small Town Infrastructure",
 export default function AboutUsPage() {
   return <>
     <SiteHeader active="about" />
-    <main className="aboutUsPage">
+    <main id="main-content" className="aboutUsPage">
       <section className="aboutUsHero"><div><h1>ABOUT US</h1></div></section>
       <section className="aboutUsIntro">
         <div className="aboutUsIntroCopy">

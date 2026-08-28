@@ -5,7 +5,7 @@ import { blogPosts, type BlogPost } from "./posts";
 export function BlogArticle({ post }: { post: BlogPost }) {
   return <>
     <SiteHeader />
-    <main className="blogArticlePage">
+    <main id="main-content" className="blogArticlePage">
       <article className="blogArticle">
         <h1>{post.title}</h1>
         <p className="blogMeta">by <strong>Your Arizona Commercial Building Inspectors</strong> <span>|</span> {post.date} <span>|</span> Uncategorized</p>

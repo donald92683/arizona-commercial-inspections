@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 export default function SpecialInspectorPage() {
   return <>
     <SiteHeader active="services" />
-    <main className="specialInspectorPage">
+    <main id="main-content" className="specialInspectorPage">
       <section className="specialHero">
         <div><h1>SPECIAL INSPECTOR</h1></div>
       </section>
