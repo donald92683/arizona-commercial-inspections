@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ThermalImagingPage() {
   return <>
     <SiteHeader active="services" />
-    <main className="thermalPage">
+    <main id="main-content" className="thermalPage">
       <section className="thermalHero"><div><h1>THERMAL IMAGING</h1></div></section>
       <section className="thermalOverview">
         <div className="thermalImageColumn">

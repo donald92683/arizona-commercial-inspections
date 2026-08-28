@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function PropertyConditionAssessmentsPage() {
   return <>
     <SiteHeader active="services" />
-    <main className="pcaPage">
+    <main id="main-content" className="pcaPage">
       <section className="pcaHero"><div><h1>PROPERTY CONDITION<br />ASSESSMENTS</h1></div></section>
       <section className="pcaOverview">
         <div className="pcaImageColumn">
