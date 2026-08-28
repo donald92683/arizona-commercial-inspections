@@ -35,6 +35,21 @@ test("server-renders the Arizona commercial inspections home page", async () => 
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview/);
 });
 
+test("uses the issue 44 hero and moves the previous hero into the inspector section", async () => {
+  const [page, styles, heroImage] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../public/uploads/2024/02/issue-44-hero.jpg", import.meta.url)),
+  ]);
+
+  assert.match(styles, /issue-44-hero\.jpg/);
+  assert.match(page, /2024\/02\/0ccce12c-cfc5-4824-b3aa-900471c17a84\.jpg/);
+  assert.match(page, /const gallery=\["2024\/02\/issue-44-hero\.jpg"/);
+  assert.match(page, /"2021\/05\/AZCPIimg-400x284\.jpg","2024\/02\/Advanced-HVAc-400x284\.jpg"/);
+  assert.doesNotMatch(page, /const gallery=\[[^;]+AZCPI2-400x284\.jpg/);
+  assert.ok(heroImage.length > 0, "the issue 44 hero image should not be empty");
+});
+
 test("keeps the inspection page header in reference order", async () => {
   const page = await readFile(
     new URL("../app/inspection-services/page.tsx", import.meta.url),
