@@ -112,6 +112,38 @@ test("includes the complete multi-family inspections route", async () => {
   assert.match(page, /CHOOSE US FOR YOUR MULTI-FAMILY PROPERTY/);
 });
 
+test("ships all restored page images", async () => {
+  const images = [
+    "../public/uploads/2021/01/tools-1183374_1280.jpg",
+    "../public/uploads/2021/03/PHOTO-2021-03-08-16-48-51-2.jpg",
+    "../public/uploads/2021/05/ccpia_logo_tagline_small-1.png",
+    "../public/uploads/2021/05/new_logo.jpg",
+    "../public/uploads/2024/02/CMI.jpg",
+    "../public/uploads/2024/02/AdobeStock_224078215.jpg",
+    "../public/uploads/2024/02/AdobeStock_260656199.jpg",
+    "../public/uploads/2024/02/AdobeStock_467303585.jpg",
+    "../public/uploads/2024/02/AdobeStock_444745697.jpg",
+    "../public/uploads/2024/02/AdobeStock_247812309.jpg",
+    "../public/uploads/2024/02/AdobeStock_293716326.jpg",
+    "../public/uploads/2024/02/1588271856429-roofinspectorcertificationlogoprogram.jpg",
+    "../public/uploads/2024/02/astm.jpg",
+    "../public/uploads/2024/02/certified-multi-unit-housing-inspector.jpg",
+    "../public/uploads/2024/02/certified-professional-inspector-cpi-logo.jpg",
+    "../public/uploads/2024/02/icc.jpg",
+    "../public/uploads/2024/02/ifc-1.jpg",
+    "../public/uploads/2024/02/nachiinstructor.jpg",
+    "../public/uploads/2024/02/DALL·E-2024-02-09-10.13.21.jpg",
+    "../public/uploads/2024/02/DALL·E-2024-02-09-12.00.29.jpg",
+    "../public/uploads/2024/02/wall-3701557_960_720.jpg",
+    "../public/uploads/2024/05/AdobeStock_225545483-scaled.jpeg",
+  ];
+
+  for (const image of images) {
+    const contents = await readFile(new URL(image, import.meta.url));
+    assert.ok(contents.length > 0, `${image} should not be empty`);
+  }
+});
+
 test("includes the complete thermal imaging route", async () => {
   const page = await readFile(
     new URL("../app/thermal-imaging/page.tsx", import.meta.url),

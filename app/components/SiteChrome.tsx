@@ -12,6 +12,19 @@ function HeaderIcon({name}:{name:"phone"|"email"|"chevron"|"calendar"}) {
   return <svg className={`headerIcon ${name}`} viewBox="0 0 24 24" aria-hidden="true" focusable="false">{paths[name]}</svg>;
 }
 
+function FooterActionIcon({name}:{name:"phone"|"email"|"calendar"}) {
+  const paths = {
+    phone: <path d="M7.6 3.5 11 2.7l2.2 5.1-2.1 1.8a18.2 18.2 0 0 0 5.3 5.3l1.8-2.1 5.1 2.2-.8 3.4c-.4 1.7-2 2.8-3.7 2.6A18.9 18.9 0 0 1 3 5.2C2.8 3.5 3.9 1.9 5.6 1.5Z" />,
+    email: <><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></>,
+    calendar: <><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9h18M7 2v6M17 2v6M8 13h3M13 13h3M8 17h3M13 17h3"/></>,
+  };
+  return <svg className="footerActionIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">{paths[name]}</svg>;
+}
+
+export function InstagramIcon({className="instagramIcon"}:{className?:string}) {
+  return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" className="instagramDot"/></svg>;
+}
+
 export function SiteHeader({active}:{active?:"home"|"about"|"services"}){
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -54,4 +67,4 @@ export function SiteHeader({active}:{active?:"home"|"about"|"services"}){
   </header>
 }
 
-export function SiteFooter(){return <footer id="contact"><div className="footerTop"><div className="footerContacts"><div><i>▯</i><h4>CALL US</h4><p><a href="tel:1-480-808-1170">(480) 808-1170</a></p></div><div><i>✉</i><h4>EMAIL US</h4><p><a href="mailto:arizonacpi@gmail.com">Click Here to Email</a></p></div><div><i>□</i><h4>REQUEST INSPECTION</h4><p><a href="/schedule-an-inspection/">Click Here to Request</a></p></div></div><p className="legal"><a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-of-service/">Terms of Service</a></p><div className="social"><a href="https://www.google.com/maps/place/Arizona+Commercial+Property+Inspections" aria-label="Google">G</a><a href="https://www.instagram.com/azcpi/" aria-label="Instagram">◎</a><a href="https://www.facebook.com/Arizonainspections/" aria-label="Facebook">f</a><a href="https://www.youtube.com/@arizonacommercialinspections" aria-label="YouTube">▶</a></div></div></footer>}
+export function SiteFooter(){return <footer id="contact"><div className="footerTop"><div className="footerContacts"><div><i><FooterActionIcon name="phone" /></i><h4>CALL US</h4><p><a href="tel:1-480-808-1170">(480) 808-1170</a></p></div><div><i><FooterActionIcon name="email" /></i><h4>EMAIL US</h4><p><a href="mailto:arizonacpi@gmail.com">Click Here to Email</a></p></div><div><i><FooterActionIcon name="calendar" /></i><h4>REQUEST INSPECTION</h4><p><a href="/schedule-an-inspection/">Click Here to Request</a></p></div></div><p className="legal"><a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-of-service/">Terms of Service</a></p><div className="social"><a href="https://www.google.com/maps/place/Arizona+Commercial+Property+Inspections" aria-label="Google">G</a><a href="https://www.instagram.com/azcpi/" aria-label="Instagram"><InstagramIcon /></a><a href="https://www.facebook.com/Arizonainspections/" aria-label="Facebook">f</a><a href="https://www.youtube.com/@arizonacommercialinspections" aria-label="YouTube">▶</a></div></div></footer>}

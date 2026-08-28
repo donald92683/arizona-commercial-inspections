@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteFooter, SiteHeader } from "../components/SiteChrome";
+import { InstagramIcon, SiteFooter, SiteHeader } from "../components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "About Us - Arizona Commercial Property Inspections",
@@ -65,7 +65,7 @@ export default function AboutUsPage() {
         <div className="inspectionList">{inspections.map(item => <div key={item}><span aria-hidden="true">✓</span>{item}</div>)}</div>
         <div className="aboutSocials">
           <h2>OUR SOCIALS</h2><p>Learn more and connect with us on our social network accounts.</p>
-          <div><a href="https://www.youtube.com/@arizonacommercialinspections" aria-label="YouTube">▶</a><a href="https://www.facebook.com/Arizonainspections/" aria-label="Facebook">f</a><a href="https://www.instagram.com/azcpi/" aria-label="Instagram">◎</a><a href="https://www.google.com/maps/place/Arizona+Commercial+Property+Inspections" aria-label="Google">G</a></div>
+          <div><a href="https://www.youtube.com/@arizonacommercialinspections" aria-label="YouTube">▶</a><a href="https://www.facebook.com/Arizonainspections/" aria-label="Facebook">f</a><a href="https://www.instagram.com/azcpi/" aria-label="Instagram"><InstagramIcon className="aboutInstagramIcon" /></a><a href="https://www.google.com/maps/place/Arizona+Commercial+Property+Inspections" aria-label="Google">G</a></div>
         </div>
         <Link className="blackButton aboutSchedule" href="/schedule-an-inspection/">Schedule Now!</Link>
         <div className="aboutUsAreas">
