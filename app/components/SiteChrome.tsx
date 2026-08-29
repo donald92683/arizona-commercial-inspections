@@ -61,7 +61,7 @@ export function SiteHeader({active}:{active?:"home"|"about"|"services"}){
         </div>
         <a href="/blog/" target="_blank" rel="noopener noreferrer">BLOG</a><a href="/contact-us/">CONTACT</a>
       </nav>
-      <a className="request" href="/contact-us/">REQUEST INSPECTION <HeaderIcon name="calendar" /></a>
+      <a className="request" href="/contact-us/"><span className="requestText">REQUEST INSPECTION</span><HeaderIcon name="calendar" /></a>
       <button className="menu" type="button" aria-controls="main-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? "×" : "☰"}</button>
     </div>
   </header>
