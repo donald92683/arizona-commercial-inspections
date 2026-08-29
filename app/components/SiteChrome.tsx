@@ -49,7 +49,7 @@ export function SiteHeader({active}:{active?:"home"|"about"|"services"}){
         <a className={active==="home"?"active":undefined} href="/">HOME</a>
         <a className={active==="about"?"active":undefined} href="/about-us/">ABOUT</a>
         <div className="navDropdown">
-          <a className={active==="services"?"active":undefined} href="/inspection-services/" aria-expanded={servicesOpen} aria-controls="services-submenu" onClick={(event) => { if (window.matchMedia("(max-width: 980px)").matches && !servicesOpen) { event.preventDefault(); setServicesOpen(true); } }}>SERVICES</a>
+          <a className={active==="services"?"active":undefined} href="/inspection-services/" aria-expanded={servicesOpen} aria-controls="services-submenu" onClick={(event) => { if (window.matchMedia("(max-width: 980px)").matches && !servicesOpen) { event.preventDefault(); setServicesOpen(true); } }}>SERVICES <HeaderIcon name="chevron" /></a>
           <div id="services-submenu" className={`navSubmenu${servicesOpen ? " mobileSubmenuOpen" : ""}`}>
             <a href="/inspection-services/">Commercial Inspection Services</a>
             <a href="/special-inspector/">Special Inspector</a>
