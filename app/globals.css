@@ -305,9 +305,12 @@ main>section:not(.hero),.inspectionPage>section:not(:first-child),.specialInspec
   }
   .siteHeader .navBar nav.mobileOpen a,
   .siteHeader .navBar nav.mobileOpen .navSubmenu a{
-    color:#333;
     font:400 16px/1.4 Poppins,sans-serif;
     letter-spacing:.5px;
+  }
+  .siteHeader .navBar nav.mobileOpen>a,
+  .siteHeader .navBar nav.mobileOpen .navDropdown>a{
+    color:#333;
   }
   .siteHeader .navBar nav.mobileOpen .navDropdown>a{
     gap:7px;
