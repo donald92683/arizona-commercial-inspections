@@ -282,21 +282,30 @@ main>section:not(.hero),.inspectionPage>section:not(:first-child),.specialInspec
     position:relative;
   }
   .siteHeader .navBar .request{
-    position:absolute;
-    left:50%;
-    margin-left:0;
-    margin-right:0;
-    transform:translateX(-50%);
+    position:static;
+    width:50px!important;
+    min-width:50px!important;
+    padding:0!important;
+    margin-left:auto;
+    margin-right:14px;
+    transform:none;
   }
   .siteHeader .navBar .request:hover{
-    transform:translateX(-50%);
+    transform:none;
+  }
+  .siteHeader .navBar .requestText{
+    display:none;
+  }
+  .siteHeader .navBar .request .headerIcon{
+    margin-left:0;
   }
   .siteHeader .navBar .menu{
-    margin-left:auto;
+    margin-left:0;
     margin-right:0;
   }
   .siteHeader .navBar nav.mobileOpen a,
   .siteHeader .navBar nav.mobileOpen .navSubmenu a{
+    color:#333;
     font:400 16px/1.4 Poppins,sans-serif;
     letter-spacing:.5px;
   }
