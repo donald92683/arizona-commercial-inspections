@@ -25,6 +25,7 @@ export function ContactForm() {
       data-tf-iframe-props="title=Arizona Commercial Inspections Form"
       data-tf-transitive-search-params=""
       data-tf-medium="embed-snippet"
+      data-tf-inline-on-mobile=""
     />
   </section>;
 }
