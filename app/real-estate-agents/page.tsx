@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { AgentAccordion } from "./AgentAccordion";
 
@@ -29,7 +28,7 @@ export default function RealEstateAgentsPage() {
       <section className="agentsBooking">
         <h2>CONTACT US ABOUT YOUR REAL ESTATE NEEDS TODAY</h2>
         <p>Elevate your client service by securing a comprehensive due diligence inspection with Arizona Commercial Property Inspections today. Our meticulous assessments provide the crucial insights your clients need to make informed purchasing decisions, ensuring their investment is sound and their interests are protected. By booking now, you demonstrate your commitment to their success and detail-oriented care. Visit our booking page to arrange a thorough due diligence service that sets your clients up for a confident and secure real estate transaction.</p>
-        <Link className="blackButton" href="/schedule-an-inspection/">SCHEDULE ONLINE</Link>
+        <a className="blackButton" href="/schedule-an-inspection/">SCHEDULE ONLINE</a>
       </section>
     </main>
     <SiteFooter />

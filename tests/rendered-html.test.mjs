@@ -271,6 +271,23 @@ test("includes the scheduling page and inspection request form", async () => {
   assert.match(form, /https:\/\/embed\.typeform\.com\/next\/embed\.js/);
 });
 
+test("uses production-safe anchors for scheduling calls to action", async () => {
+  const pages = [
+    ["about-us/page.tsx", "Schedule Now!"],
+    ["inspection-services/page.tsx", "Book Now!"],
+    ["special-inspector/page.tsx", "Book Now!"],
+    ["property-condition-assessments/page.tsx", "SCHEDULE ONLINE"],
+    ["multi-family-inspections/page.tsx", "Book Now!"],
+    ["thermal-imaging/page.tsx", "SCHEDULE ONLINE"],
+    ["real-estate-agents/page.tsx", "SCHEDULE ONLINE"],
+  ];
+
+  for (const [file, label] of pages) {
+    const page = await readFile(new URL(`../app/${file}`, import.meta.url), "utf8");
+    assert.match(page, new RegExp(`<a[^>]+href="/schedule-an-inspection/"[^>]*>${label.replace("!", "\\!")}`));
+  }
+});
+
 test("includes the blog index and all ten requested articles", async () => {
   const index = await readFile(new URL("../app/blog/page.tsx", import.meta.url), "utf8");
   const posts = await readFile(new URL("../app/blog/posts.ts", import.meta.url), "utf8");
