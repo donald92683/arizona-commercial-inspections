@@ -36,7 +36,7 @@ export default function MultiFamilyInspectionsPage() {
       <section className="multiFamilyIntro">
         <h2>PROPERTY INSPECTIONS FOR MULTI-FAMILY PROPERTIES</h2>
         <p>Arizona Commercial Inspections specializes in comprehensive multi-family commercial property inspections, offering a range of services tailored to meet your needs. Our expertise includes HUD inspections, NSPIRE evaluations, Capital Needs Assessments (CNA’s), and Physical Needs Assessments (PNA’s), ensuring thorough and accurate assessments for your property investments.</p>
-        <Link className="blackButton" href="/contact-us/">Book Now!</Link>
+        <Link className="blackButton" href="/schedule-an-inspection/">Book Now!</Link>
       </section>
       <section className="multiFamilyOverview">
         <div className="multiFamilyImages">

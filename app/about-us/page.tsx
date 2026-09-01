@@ -67,7 +67,7 @@ export default function AboutUsPage() {
           <h2>OUR SOCIALS</h2><p>Learn more and connect with us on our social network accounts.</p>
           <div><a href="https://www.youtube.com/@arizonacommercialinspections" aria-label="YouTube">▶</a><a href="https://www.facebook.com/Arizonainspections/" aria-label="Facebook">f</a><a href="https://www.instagram.com/azcpi/" aria-label="Instagram"><InstagramIcon className="aboutInstagramIcon" /></a><a href="https://www.google.com/maps/place/Arizona+Commercial+Property+Inspections" aria-label="Google">G</a></div>
         </div>
-        <Link className="blackButton aboutSchedule" href="/contact-us/">Schedule Now!</Link>
+        <Link className="blackButton aboutSchedule" href="/schedule-an-inspection/">Schedule Now!</Link>
         <div className="aboutUsAreas">
           <h2>TUCSON COMMERCIAL INSPECTIONS &amp; ALL OF ARIZONA</h2>
           <p>Providing commercial property inspection services in the <Link href="/">Phoenix Metro Area</Link> as well as <Link href="/about-us/">Tucson</Link>, <Link href="/inspection-services/">Flagstaff</Link>, <Link href="/property-condition-assessments/">Prescott</Link>, <Link href="/showlow-az-commercial-building-inspections/">Showlow</Link>, <Link href="/kingman-arizona-commercial-building-inspections/">Kingman</Link>, <Link href="/yuma-az-commercial-inspections/">Yuma</Link>, <Link href="/payson-az-commercial-building-inspections/">Payson</Link>, and <Link href="/lake-havasu-arizona-commercial-building-inspections/">Lake Havasu</Link>. If you need a commercial property inspection anywhere in Arizona, give us a call.</p>

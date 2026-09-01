@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
-import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us - Arizona Commercial Property Inspections",
@@ -15,7 +14,6 @@ export default function ContactUsPage() {
     <SiteHeader />
     <main id="main-content" className="contactPage">
       <section className="contactHero"><div><h1>CONTACT US</h1></div></section>
-      <ContactForm />
       <section className="contactMain">
         <div className="contactPanel">
           <div className="contactActions">
