@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
 export const metadata: Metadata = {
@@ -23,9 +22,9 @@ export default function ContactUsPage() {
             <a className="contactAction" href="mailto:arizonacpi@gmail.com">
               <i aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="3" y="7" width="26" height="18" rx="1" /><path d="m4 9 12 10L28 9M4 24l8-8m16 8-8-8" /></svg></i><span><strong>EMAIL US</strong><small>Click Here to Email</small></span>
             </a>
-            <Link className="contactAction" href="/contact-us/">
+            <a className="contactAction" href="/schedule-an-inspection/">
               <i aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4" y="7" width="24" height="21" rx="1" /><path d="M4 12h24M10 3v7m12-7v7" /></svg></i><span><strong>REQUEST AN INSPECTION</strong><small>Click Here to REQUEST</small></span>
-            </Link>
+            </a>
           </div>
           <iframe className="contactMap" src={mapUrl} title="Map of Arizona" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
         </div>
