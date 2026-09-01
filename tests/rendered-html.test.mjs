@@ -235,7 +235,7 @@ test("includes the complete contact us route", async () => {
   assert.match(page, /EMAIL US/);
   assert.match(page, /REQUEST AN INSPECTION/);
   assert.match(page, /Map of Arizona/);
-  assert.match(page, /href="\/contact-us\/"/);
+  assert.match(page, /href="\/schedule-an-inspection\/"/);
   assert.doesNotMatch(page, /ContactForm/);
 });
 
@@ -280,6 +280,7 @@ test("uses production-safe anchors for scheduling calls to action", async () => 
     ["multi-family-inspections/page.tsx", "Book Now!"],
     ["thermal-imaging/page.tsx", "SCHEDULE ONLINE"],
     ["real-estate-agents/page.tsx", "SCHEDULE ONLINE"],
+    ["contact-us/page.tsx", "[\\s\\S]*REQUEST AN INSPECTION"],
   ];
 
   for (const [file, label] of pages) {
