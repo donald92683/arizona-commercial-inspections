@@ -236,17 +236,7 @@ test("includes the complete contact us route", async () => {
   assert.match(page, /REQUEST AN INSPECTION/);
   assert.match(page, /Map of Arizona/);
   assert.match(page, /href="\/contact-us\/"/);
-  assert.match(page, /ContactForm/);
-
-  const form = await readFile(
-    new URL("../app/contact-us/ContactForm.tsx", import.meta.url),
-    "utf8",
-  );
-  assert.match(form, /data-tf-widget="uUZUOlyC"/);
-  assert.match(form, /Arizona Commercial Inspections Form/);
-  assert.match(form, /data-tf-transitive-search-params/);
-  assert.match(form, /https:\/\/embed\.typeform\.com\/next\/embed\.js/);
-  assert.doesNotMatch(form, /mailto:arizonacpi@gmail.com/);
+  assert.doesNotMatch(page, /ContactForm/);
 });
 
 test("publishes the contact us route in the static export", async () => {
@@ -260,13 +250,25 @@ test("publishes the contact us route in the static export", async () => {
   assert.doesNotMatch(exporter, /const basePath = "\/arizona-commercial-inspections";/);
 });
 
-test("redirects the legacy scheduling route to the contact page", async () => {
+test("includes the scheduling page and inspection request form", async () => {
   const page = await readFile(
     new URL("../app/schedule-an-inspection/page.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.match(page, /redirect\("\/contact-us\/"\)/);
+  assert.match(page, /SCHEDULE AN INSPECTION/);
+  assert.match(page, /ContactForm/);
+  assert.match(page, /Schedule an Arizona commercial property inspection/);
+  assert.doesNotMatch(page, /redirect\(/);
+
+  const form = await readFile(
+    new URL("../app/contact-us/ContactForm.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(form, /data-tf-widget="bGHYWEdu"/);
+  assert.match(form, /Arizona Commercial Inspections Form/);
+  assert.match(form, /data-tf-transitive-search-params/);
+  assert.match(form, /https:\/\/embed\.typeform\.com\/next\/embed\.js/);
 });
 
 test("includes the blog index and all ten requested articles", async () => {
