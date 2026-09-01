@@ -29,7 +29,7 @@ export default function PropertyConditionAssessmentsPage() {
       <section className="pcaBooking">
         <h2>BOOK YOUR CONDITION ASSESSMENT</h2>
         <p>Choose Arizona Commercial Property Inspections for comprehensive PCA services that delve deeper, offering the insights necessary to strategize for your commercial property. Reach out to us today to arrange a consultation and discover the professionalism and commitment that distinguish us. Your property’s prosperity is our top concern.</p>
-        <Link className="blackButton" href="/schedule-an-inspection/">SCHEDULE ONLINE</Link>
+        <a className="blackButton" href="/schedule-an-inspection/">SCHEDULE ONLINE</a>
       </section>
       <section className="pcaAreas">
         <h2>ARIZONA PROPERTY CONDITION<br />ASSESSMENTS</h2>

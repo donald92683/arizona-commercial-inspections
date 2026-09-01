@@ -34,7 +34,7 @@ export default function ThermalImagingPage() {
       <section className="thermalBooking">
         <h2>BOOK YOUR THERMAL INSPECTION</h2>
         <p>Don’t miss the opportunity to safeguard your investment and optimize your property’s efficiency with Arizona Commercial Property Inspections’ advanced thermal imaging services. Booking your inspection today ensures you gain immediate insights into the health of your property, helping to prevent costly repairs, enhance energy efficiency, and protect your asset for the long term. Visit our booking page now to secure your thermal inspection service and take the first step towards peace of mind and operational excellence.</p>
-        <Link className="blackButton" href="/schedule-an-inspection/">SCHEDULE ONLINE</Link>
+        <a className="blackButton" href="/schedule-an-inspection/">SCHEDULE ONLINE</a>
       </section>
       <section className="thermalAreas">
         <h2>ARIZONA COMMERCIAL THERMAL IMAGING</h2>

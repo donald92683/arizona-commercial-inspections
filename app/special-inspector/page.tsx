@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
 const uploads = "/uploads/";
@@ -66,7 +65,7 @@ export default function SpecialInspectorPage() {
         <h2>SPECIAL INSPECTOR (SI) SERVICES IN PHOENIX, AZ</h2>
         <p>Our team provides professional Special Inspector (SI) services to ensure structural components and systems are built to code, from monitoring footing pours to verifying large concrete and steel installations. With an inspector approved by the City of Phoenix—whose list is recognized by most Arizona municipalities—we offer unmatched expertise in critical areas like concrete, masonry, steel welding, fireproofing, and more.</p>
         <p>This specialized oversight reduces risk, prevents costly mistakes, and gives builders, owners, and municipalities confidence that every project meets the highest safety and compliance standards.</p>
-        <Link className="blackButton" href="/schedule-an-inspection/">Book Now!</Link>
+        <a className="blackButton" href="/schedule-an-inspection/">Book Now!</a>
       </section>
 
       <section className="specialOverview">
